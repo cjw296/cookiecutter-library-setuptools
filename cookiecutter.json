@@ -8,5 +8,6 @@
   "github_path": "{{ cookiecutter.github_org }}/{{ cookiecutter.project_slug }}",
   "full_name": "Chris Withers",
   "email": "chris@withers.org",
-  "pypi_username": "chrisw"
+  "pypi_username": "chrisw",
+  "virtualenv_root": "~/virtualenvs"
 }
