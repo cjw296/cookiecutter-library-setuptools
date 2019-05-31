@@ -8,7 +8,7 @@ common: &common
 {% for version in cookiecutter.python_versions %}
     - python/pip-run-tests:
         name: python{{ version.replace('.', '') }}
-        image: circleci/{{ version }}
+        image: circleci/python:{{ version }}
 {% endfor %}
     - python/coverage:
         name: coverage
