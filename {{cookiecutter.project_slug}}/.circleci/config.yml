@@ -1,0 +1,39 @@
+version: 2.1
+
+orbs:
+  python: cjw296/python-ci@1.2
+
+common: &common
+  jobs:
+{% for version in cookiecutter.python_versions %}
+    - python/pip-run-tests:
+        name: python{{ version.replace('.', '') }}
+        image: circleci/{{ version }}
+{% endfor %}
+    - python/coverage:
+        name: coverage
+        requires:
+{%- for version in cookiecutter.python_versions %}
+          - python{{ version.replace('.', '') }}
+{%- endfor %}
+
+    - python/release:
+        name: release
+        config: .carthorse.yml
+        requires:
+          - coverage
+        filters:
+          branches:
+            only: master
+
+workflows:
+  push:
+    <<: *common
+  periodic:
+    <<: *common
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only: master
