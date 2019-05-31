@@ -18,3 +18,4 @@ This sets up:
 - Tests using pytest
 - Docs using Sphinx
 - CI (including releasing) using CircleCI and Carthorse
+- A skeleton ``.idea`` for PyCharm. (You'll still need to add the interpreter in the virtualenv by hand)
