@@ -1,0 +1,8 @@
+version: 2
+python:
+  version: {{ cookiecutter.python_versions[-1] }}
+  install:
+    - method: pip
+      path: .
+      extra_requirements:
+         - build
