@@ -42,5 +42,5 @@ setup(
         ],
         build=['sphinx', 'sphinx-rtd-theme', 'setuptools-git', 'twine', 'wheel']
     ),
-    options={'bdist_wheel':{'universal':True},
+    options={'bdist_wheel': {'universal': True}},
 )
