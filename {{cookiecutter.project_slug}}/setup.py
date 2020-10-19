@@ -42,5 +42,7 @@ setup(
         ],
         build=['sphinx', 'sphinx-rtd-theme', 'setuptools-git', 'twine', 'wheel']
     ),
+{%- if "2.7" in cookiecutter.python_versions -%}
     options={'bdist_wheel': {'universal': True}},
+{%- endif %}
 )
