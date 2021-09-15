@@ -18,19 +18,20 @@ instructions to perform various development tasks:
 Setting up a virtualenv
 -----------------------
 
-The recommended way to set up a development environment is to turn
-your checkout into a virtualenv and then install the package in
-editable form as follows::
+The recommended way to set up a development environment is to create
+a virtualenv and then install the package in editable form as follows::
 
-  $ virtualenv .
-  $ bin/pip install -U -e .[test,build]
+  $ python3 -m venv ~/virtualenvs/{{ cookiecutter.project_slug }}
+  $ source ~/virtualenvs/{{ cookiecutter.project_slug }}/bin/activate
+  $ pip install -U -e .[test,build]
 
 Running the tests
 -----------------
 
-Once you've set up a virtualenv, the tests can be run as follows::
+Once you've set up a virtualenv, the tests can be run in the activated
+virtualenv as follows::
 
-  $ bin/pytest
+  $ pytest
 
 Building the documentation
 --------------------------
@@ -38,7 +39,6 @@ Building the documentation
 The Sphinx documentation is built by doing the following from the
 directory containing setup.py::
 
-  $ source bin/activate
   $ cd docs
   $ make html
 
