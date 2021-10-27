@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  python: cjw296/python-ci@2.1
+  python: cjw296/python-ci@3
 
 common: &common
   jobs:
@@ -11,7 +11,7 @@ common: &common
           parameters:
             image:
 {%- for version in cookiecutter.python_versions %}
-              - circleci/python:{{ version }}
+              - circleci/cimg:{{ version }}
 {%- endfor %}
 
     - python/coverage:
