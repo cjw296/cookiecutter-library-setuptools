@@ -11,7 +11,7 @@ common: &common
           parameters:
             image:
 {%- for version in cookiecutter.python_versions %}
-              - circleci/cimg:{{ version }}
+              - cimg/python:{{ version }}
 {%- endfor %}
 
     - python/coverage:
