@@ -10,6 +10,7 @@ If you're me, on my laptop, you want:
 
 .. code-block:: bash
 
+  cd ~/vcs/git
   ~/virtualenvs/cookiecutter/bin/cookiecutter cookiecutter-library-setuptools/
 
 This sets up:
