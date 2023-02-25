@@ -20,9 +20,7 @@ first_year = {% now 'local', '%Y' %}
 current_year = datetime.datetime.now().year
 copyright = (str(current_year) if current_year==first_year else ('%s-%s'%(first_year,current_year)))+' {{ cookiecutter.full_name }}'
 version = release = pkg_resources.get_distribution(project).version
-exclude_patterns = [
-    '_build'
-]
+exclude_trees = ['_build']
 pygments_style = 'sphinx'
 
 # Options for HTML output
@@ -35,3 +33,8 @@ latex_documents = [
    '{{ cookiecutter.full_name }}', 'manual'),
 ]
 
+exclude_patterns = ['_build', '**/furo.js.LICENSE.txt']
+
+nitpicky = True
+nitpick_ignore = [
+]
