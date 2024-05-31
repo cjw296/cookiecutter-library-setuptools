@@ -36,6 +36,7 @@ setup(
     python_requires=">={{ cookiecutter.python_versions[0] }}",
     extras_require=dict(
         test=[
+            'mypy',
             'pytest',
             'pytest-cov',
             'sybil',
