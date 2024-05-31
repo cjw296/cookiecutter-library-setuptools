@@ -25,6 +25,4 @@ if __name__ == '__main__':
     virtualenv_root = "{{ cookiecutter.virtualenv_root }}"
     if virtualenv_root:
         python_versions = literal_eval("{{ cookiecutter.python_versions }}")
-        if '2.7' in python_versions:
-            make_venv('~/virtualenvs/virtualenv/bin/virtualenv', '2.7')
         make_venv('python{{ cookiecutter.python_versions[-1] }} -m venv', '{{ cookiecutter.python_versions[-1] }}')
