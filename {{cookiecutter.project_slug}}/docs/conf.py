@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
-import datetime, os, pkg_resources
-
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+import os, datetime, time
+from importlib import metadata
 
 intersphinx_mapping = {
     'http://docs.python.org': None,
@@ -19,7 +18,7 @@ project = '{{ cookiecutter.project_slug }}'
 first_year = {% now 'local', '%Y' %}
 current_year = datetime.datetime.now().year
 copyright = (str(current_year) if current_year==first_year else ('%s-%s'%(first_year,current_year)))+' {{ cookiecutter.full_name }}'
-version = release = pkg_resources.get_distribution(project).version
+version = release = metadata.version(project)
 exclude_trees = ['_build']
 pygments_style = 'sphinx'
 
